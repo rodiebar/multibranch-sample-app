@@ -10,5 +10,15 @@ pipeline{
         echo "Hello"
       }
     }
+    stage('cat README'){
+      when {
+        branch "*123"
+      }
+      steps{
+        sh '''
+          cat README.md
+        '''
+      }
+    }
   }
 }
